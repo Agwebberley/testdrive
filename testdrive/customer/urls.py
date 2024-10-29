@@ -4,6 +4,7 @@ from .views import CustomerCreateView
 from .views import CustomerDeleteView
 from .views import CustomerListView
 from .views import CustomerUpdateView
+from .views import CustomerDetailView
 
 urlpatterns = [
     path("customer/create/", CustomerCreateView.as_view(), name="customer-create"),
@@ -17,5 +18,10 @@ urlpatterns = [
         "customer/delete/<int:pk>/",
         CustomerDeleteView.as_view(),
         name="customer-delete",
+    ),
+    path(
+        "customer/detail/<int:pk>/",
+        CustomerDetailView.as_view(),
+        name="customer-detail",
     ),
 ]
