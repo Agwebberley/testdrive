@@ -48,9 +48,9 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
+    # Local Postgres
     "default": env.db(
-        "DATABASE_URL",
-        default="postgres:///testdrive",
+        "DATABASE_URL", default="postgres://postgres:postgres@127.0.0.1:5432/testdrive"
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -91,9 +91,9 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "testdrive.users",
     # Your stuff: custom apps go here
-    "customers",
-    "orders",
-    "parts",
+    "customer",
+    "order",
+    "part",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

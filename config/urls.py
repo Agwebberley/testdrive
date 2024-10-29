@@ -19,9 +19,9 @@ urlpatterns = [
     path("users/", include("testdrive.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path('customers/',include(testdrive.customers.urls'))
-    path('orders/',include(testdrive.orders.urls'))
-    path('parts/',include(testdrive.parts.urls))
+    path("customers/", include("testdrive.customer.urls")),
+    path("orders/", include("testdrive.order.urls")),
+    path("parts/", include("testdrive.part.urls")),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
     path("", include("frame.urls")),
